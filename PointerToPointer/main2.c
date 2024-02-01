@@ -1,15 +1,6 @@
 #include <stdio.h>
 #include <stdint.h>
 
-unsigned char data[] = "Hello, World!";
-
-char readChar(unsigned char** pptr)
-{
-	char c = **pptr;
-	(*pptr)++;
-	return c;
-}
-
 int main() 
 {
     int x = 5;
@@ -32,7 +23,13 @@ int main()
     printf("Value using ***ptr3: %d\n", ***ptr3);
     printf("Value using ptr3:    %d\n", ptr3);
     printf("Value using &ptr3:   %d\n", &ptr3);    
-    
+
+
+    *ptr2 = &x;  // ptr = &x;
+    ++**ptr2;
+    printf("Value using *ptr2:   %d\n", *ptr2);
+    printf("New value x =        %d\n", x);
+
 }
 
 
